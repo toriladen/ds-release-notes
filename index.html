@@ -304,7 +304,7 @@
 <main>
 
   <div class="refresh-bar">
-    🔄 This page auto-refreshes daily at 6:00 AM ET. To pull the latest ADO data, regenerate from Claude.
+    🔄 This page auto-refreshes daily at 4:00 PM ET. To pull the latest ADO data, regenerate from Claude.
   </div>
 
   <!-- ── DEPLOYED THIS WEEK ── -->
@@ -459,21 +459,21 @@
     hour: 'numeric', minute: '2-digit', hour12: true
   });
 
-  function getNext6amEastern() {
+  function getNext4pmEastern() {
     const nowUtc = Date.now();
     const jan = new Date(new Date().getFullYear(), 0, 1).getTimezoneOffset();
     const jul = new Date(new Date().getFullYear(), 6, 1).getTimezoneOffset();
     const isDST = new Date().getTimezoneOffset() < Math.max(jan, jul);
     const easternOffsetHours = isDST ? -4 : -5;
     const easternNow = new Date(nowUtc + easternOffsetHours * 3600 * 1000);
-    const next6am = new Date(easternNow);
-    next6am.setUTCHours(6, 0, 0, 0);
-    if (next6am <= easternNow) next6am.setUTCDate(next6am.getUTCDate() + 1);
-    return next6am.getTime() - easternOffsetHours * 3600 * 1000;
+    const next4pm = new Date(easternNow);
+    next4pm.setUTCHours(16, 0, 0, 0);
+    if (next4pm <= easternNow) next4pm.setUTCDate(next4pm.getUTCDate() + 1);
+    return next4pm.getTime() - easternOffsetHours * 3600 * 1000;
   }
 
   const countdownEl = document.getElementById('countdown');
-  const fireAt = getNext6amEastern();
+  const fireAt = getNext4pmEastern();
 
   function updateCountdown() {
     const msLeft = fireAt - Date.now();
@@ -481,7 +481,7 @@
     const h = Math.floor(msLeft / 3600000);
     const m = Math.floor((msLeft % 3600000) / 60000);
     const s = Math.floor((msLeft % 60000) / 1000);
-    countdownEl.textContent = `6:00 AM ET (in ${h}h ${m}m ${s}s)`;
+    countdownEl.textContent = `4:00 PM ET (in ${h}h ${m}m ${s}s)`;
   }
 
   updateCountdown();
