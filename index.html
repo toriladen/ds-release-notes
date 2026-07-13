@@ -312,49 +312,12 @@
     <div class="section-header">
       <span class="section-emoji">🚢</span>
       <h2>Deployed this week</h2>
-      <span class="count">3 items</span>
+      <span class="count">0 items</span>
     </div>
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-story">⭐ User Story</span>
-          <span class="wi-id">#111785</span>
-        </div>
-        <div class="card-title">🤖 Create Booker Competitor Prep Automation with Data Mate</div>
-        <div class="card-blurb">DataMate can now automatically prepare and organize data exported from Booker, covering clients, appointments, services, employees, sales, and gift cards — making Booker conversions faster and more consistent from the start.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Data Transformation Tool</span>
-          <span class="date-chip">🚀 Jun 30, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-bug">🐛 Bug Fix</span>
-          <span class="wi-id">#116971</span>
-        </div>
-        <div class="card-title">📊 Update DataMate to Reference Sheets by Position During Prep Steps</div>
-        <div class="card-blurb">Fixed an issue where DataMate could break if spreadsheet tabs were renamed. It now locates the right sheets by their order rather than their name, making prep steps more resilient to minor file variations.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Data Transformation Tool</span>
-          <span class="date-chip">🚀 Jun 30, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#122272</span>
-        </div>
-        <div class="card-title">🔡 DataMate Should Not Require Case-Sensitive File Names</div>
-        <div class="card-blurb">DataMate used to skip files if their names weren't capitalized exactly right — for example, "BackBar" instead of "Backbar." This fix makes the tool accept files regardless of how they're capitalized, preventing silent import failures.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Data Transformation Tool</span>
-          <span class="date-chip">🚀 Jun 30, 2026</span>
-        </div>
-      </div>
-
+    <div class="empty-state">
+      <span class="empty-icon">😴</span>
+      <strong>No deployments this week</strong>
+      <p>Check back soon — the team is busy building what's next.</p>
     </div>
   </section>
 
@@ -363,85 +326,20 @@
     <div class="section-header">
       <span class="section-emoji">🔮</span>
       <h2>Coming in the next release</h2>
-      <span class="count">6 items</span>
+      <span class="count">1 item</span>
     </div>
     <div class="cards">
 
       <div class="card">
         <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#124440</span>
+          <span class="badge badge-story">⭐ User Story</span>
+          <span class="wi-id">#122149</span>
         </div>
-        <div class="card-title">🎁 Gift Card Full Req Macro Reset</div>
-        <div class="card-blurb">The gift card import macro was not handling 16-digit gift card numbers correctly. This fix restores the previous working version so gift card data is processed accurately during migration.</div>
+        <div class="card-title">📂 Create DaySmart Local/SQL Competitor Prep Automation with Data Mate</div>
+        <div class="card-blurb">DataMate can now automate the preparation of data exported from DaySmart, a competing salon software. It opens the DaySmart backup file, processes the data automatically, and outputs clean files ready to import — reducing the manual work involved in DaySmart-to-Meevo conversions.</div>
         <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">✅ Jun 29, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#124442</span>
-        </div>
-        <div class="card-title">👥 Client Full Req Macro Reset</div>
-        <div class="card-blurb">The client data macro had several issues — including zip codes losing their leading zeroes and client IDs not being cleaned up properly. This reset addresses those problems and restores accurate client data processing.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">✅ Jun 17, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125542</span>
-        </div>
-        <div class="card-title">📝 Client Visit Note Full Req Macro Reset</div>
-        <div class="card-blurb">The client visit notes import macro was rolled back and retested after issues were found. The fix ensures that visit note history is carried over correctly when clients are migrated into Meevo.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">✅ Jun 23, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125544</span>
-        </div>
-        <div class="card-title">🧑‍💼 Employees Full Req Macro Reset</div>
-        <div class="card-blurb">The employee import macro was rolled back and retested after problems were identified. This ensures staff records are migrated into Meevo cleanly and without data loss.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">✅ Jun 29, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125545</span>
-        </div>
-        <div class="card-title">📅 Appointments Full Req Macro Reset</div>
-        <div class="card-blurb">The appointments import macro was reset and retested following issues found in testing. This ensures past appointment history is transferred accurately during data migration.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">✅ Jun 25, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125546</span>
-        </div>
-        <div class="card-title">💰 Sales Snapshot Full Req Macro Reset</div>
-        <div class="card-blurb">The sales snapshot import macro was rolled back and retested after quality issues were found. The fix ensures historical sales data is captured and imported correctly when setting up a new location.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">✅ Jun 24, 2026</span>
+          <span class="area-path">📁 Data Transformation Tool</span>
+          <span class="date-chip">✅ Ready For Merge</span>
         </div>
       </div>
 
