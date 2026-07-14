@@ -322,7 +322,7 @@
           <span class="wi-id">#115960</span>
         </div>
         <div class="card-title">📤 Data Export Tool - Vagaro 2nd Gen Automation</div>
-        <div class="card-blurb">AutoMate can now automatically export all business data from a Vagaro salon account — including customers, employees, services, appointments, gift certificates, and sales — directly into Excel files, eliminating the need for manual exports and saving a persistent login session so 2FA only needs to be completed once.</div>
+        <div class="card-blurb">AutoMate can now automatically export all business data from a Vagaro salon account — including customers, employees, services, products, gift certificates, sales transactions, and appointments — directly into Excel files. A persistent login session means 2FA only needs to be completed once per account; subsequent runs reuse the saved session automatically.</div>
         <div class="card-footer">
           <span class="area-path">📁 Data Extraction Tool</span>
           <span class="date-chip">🚀 Jul 13, 2026</span>
@@ -335,7 +335,7 @@
           <span class="wi-id">#124440</span>
         </div>
         <div class="card-title">🎁 Gift Card Full Req Macro Reset</div>
-        <div class="card-blurb">The Gift Card macro was incorrectly processing gift card numbers with 16 digits. It has been rolled back to a stable version that handles all gift card formats properly.</div>
+        <div class="card-blurb">The Gift Card migration macro was rolled back and fixed to properly handle gift card numbers with 16 digits, which a previous version was processing incorrectly.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -348,7 +348,7 @@
           <span class="wi-id">#124442</span>
         </div>
         <div class="card-title">👤 Client Full Req Macro Reset</div>
-        <div class="card-blurb">The Client macro was corrected to preserve leading zeros in zip codes, strip non-numeric characters, and properly truncate oversized client ID values during migration.</div>
+        <div class="card-blurb">The Client migration macro was rolled back and corrected to preserve leading zeros in zip codes, strip non-numeric characters from IDs, and properly truncate oversized client external ID values.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -361,7 +361,7 @@
           <span class="wi-id">#124617</span>
         </div>
         <div class="card-title">📦 Product Full Req Macro Reset</div>
-        <div class="card-blurb">The Product macro was fixed to correctly preserve leading zeros on SKU codes and barcodes, prevent digit rounding on long barcode numbers, and respect "Not for Sale" product flags.</div>
+        <div class="card-blurb">The Product migration macro was rolled back and fixed to preserve leading zeros on SKU codes and barcodes, prevent digit rounding on long barcode numbers, and correctly honor "Not for Sale" product flags.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -374,7 +374,7 @@
           <span class="wi-id">#125542</span>
         </div>
         <div class="card-title">📝 Client Visit Note Full Req Macro Reset</div>
-        <div class="card-blurb">The Client Visit Note macro was reset and re-verified to ensure client visit note records are processed correctly and completely during data migration.</div>
+        <div class="card-blurb">The Client Visit Note migration macro was rolled back and re-verified to ensure client visit note records are processed correctly and completely during data migration.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -387,7 +387,7 @@
           <span class="wi-id">#125543</span>
         </div>
         <div class="card-title">✂️ Services Full Req Macro Reset</div>
-        <div class="card-blurb">The Services macro was reset and re-verified to ensure all service records are accurately migrated without data loss or corruption.</div>
+        <div class="card-blurb">The Services migration macro was rolled back and re-verified to ensure all service records are migrated accurately without data loss or corruption.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -400,7 +400,7 @@
           <span class="wi-id">#125544</span>
         </div>
         <div class="card-title">👥 Employees Full Req Macro Reset</div>
-        <div class="card-blurb">The Employees macro was reset and re-verified to ensure employee records are migrated accurately and meet all data requirements.</div>
+        <div class="card-blurb">The Employees migration macro was rolled back and re-verified to ensure all employee records are migrated accurately and meet data requirements.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -413,7 +413,7 @@
           <span class="wi-id">#125545</span>
         </div>
         <div class="card-title">📅 Appointments Full Req Macro Reset</div>
-        <div class="card-blurb">The Appointments macro was reset and re-verified to ensure appointment data is handled correctly and completely during migration.</div>
+        <div class="card-blurb">The Appointments migration macro was rolled back and re-verified to ensure appointment records are handled correctly and completely during data migration.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -426,7 +426,7 @@
           <span class="wi-id">#125546</span>
         </div>
         <div class="card-title">💰 Sales Snapshot Full Req Macro Reset</div>
-        <div class="card-blurb">The Sales Snapshot macro was reset and re-verified to ensure sales data snapshots are processed accurately during migration.</div>
+        <div class="card-blurb">The Sales Snapshot migration macro was rolled back and re-verified to ensure all sales data snapshots are processed accurately during migration.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
           <span class="date-chip">🚀 Jul 9, 2026</span>
@@ -441,23 +441,12 @@
     <div class="section-header">
       <span class="section-emoji">🔮</span>
       <h2>Coming in the next release</h2>
-      <span class="count">1 item</span>
+      <span class="count">0 items</span>
     </div>
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-story">⭐ User Story</span>
-          <span class="wi-id">#122149</span>
-        </div>
-        <div class="card-title">📂 Create DaySmart Local/SQL Competitor Prep Automation with Data Mate</div>
-        <div class="card-blurb">DataMate can now automate the preparation of data exported from DaySmart, a competing salon software. It opens the DaySmart backup file, processes the data automatically, and outputs clean files ready to import — reducing the manual work involved in DaySmart-to-Meevo conversions.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Data Transformation Tool</span>
-          <span class="date-chip">✅ Ready For Merge</span>
-        </div>
-      </div>
-
+    <div class="empty-state">
+      <span class="empty-icon">😴</span>
+      <strong>Nothing queued yet</strong>
+      <p>No items are currently staged for the next release. Check back soon!</p>
     </div>
   </section>
 
