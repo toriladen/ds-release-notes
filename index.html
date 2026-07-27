@@ -312,137 +312,46 @@
     <div class="section-header">
       <span class="section-emoji">🚢</span>
       <h2>Deployed this week</h2>
-      <span class="count">10 items</span>
+      <span class="count">3 items</span>
     </div>
     <div class="cards">
 
       <div class="card">
         <div class="card-top">
-          <span class="badge badge-story">⭐ User Story</span>
-          <span class="wi-id">#122149</span>
+          <span class="badge badge-bug">🐛 Bug Fix</span>
+          <span class="wi-id">#133218</span>
         </div>
-        <div class="card-title">🔄 DaySmart Local/SQL Competitor Prep Automation with Data Mate</div>
-        <div class="card-blurb">Data Mate can now automate DaySmart conversions — it opens the encrypted backup file, restores it to a temporary database, runs the extraction queries, and outputs cleaned CSVs ready for the next prep steps, all without manual intervention.</div>
+        <div class="card-title">📝 DataMate, Square VisitNotes with 1 Record Error</div>
+        <div class="card-blurb">Fixed a bug in DataMate's Square integration where a single visit note record was failing to process correctly, causing an error during the conversion of visit notes data.</div>
         <div class="card-footer">
           <span class="area-path">📁 Data Transformation Tool</span>
-          <span class="date-chip">🚀 Jul 14, 2026</span>
+          <span class="date-chip">🚀 Jul 23, 2026</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="badge badge-bug">🐛 Bug Fix</span>
+          <span class="wi-id">#133683</span>
+        </div>
+        <div class="card-title">🗺️ DataMate, Square, Wrong Mapping in VisitNotes</div>
+        <div class="card-blurb">Fixed an incorrect data mapping issue in DataMate's Square integration where visit note information was being written to the wrong fields during conversions, ensuring notes now land in the correct place.</div>
+        <div class="card-footer">
+          <span class="area-path">📁 Data Transformation Tool</span>
+          <span class="date-chip">🚀 Jul 23, 2026</span>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
           <span class="badge badge-story">⭐ User Story</span>
-          <span class="wi-id">#115960</span>
+          <span class="wi-id">#134075</span>
         </div>
-        <div class="card-title">📤 Data Export Tool - Vagaro 2nd Gen Automation</div>
-        <div class="card-blurb">AutoMate can now automatically export all business data from a Vagaro salon account — including customers, employees, services, products, gift certificates, sales transactions, and appointments — directly into Excel files. A persistent login session means 2FA only needs to be completed once per account; subsequent runs reuse the saved session automatically.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Data Extraction Tool</span>
-          <span class="date-chip">🚀 Jul 13, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#124440</span>
-        </div>
-        <div class="card-title">🎁 Gift Card Full Req Macro Reset</div>
-        <div class="card-blurb">The Gift Card migration macro was rolled back and fixed to properly handle gift card numbers with 16 digits, which a previous version was processing incorrectly.</div>
+        <div class="card-title">👤 Remove N/A Handling from Client Full Req Macro</div>
+        <div class="card-blurb">The Client migration macro was updated to stop automatically filling in "N/A" for clients who have blank first or last names. Those records will now import with the field left empty rather than using a placeholder value.</div>
         <div class="card-footer">
           <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#124442</span>
-        </div>
-        <div class="card-title">👤 Client Full Req Macro Reset</div>
-        <div class="card-blurb">The Client migration macro was rolled back and corrected to preserve leading zeros in zip codes, strip non-numeric characters from IDs, and properly truncate oversized client external ID values.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#124617</span>
-        </div>
-        <div class="card-title">📦 Product Full Req Macro Reset</div>
-        <div class="card-blurb">The Product migration macro was rolled back and fixed to preserve leading zeros on SKU codes and barcodes, prevent digit rounding on long barcode numbers, and correctly honor "Not for Sale" product flags.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125542</span>
-        </div>
-        <div class="card-title">📝 Client Visit Note Full Req Macro Reset</div>
-        <div class="card-blurb">The Client Visit Note migration macro was rolled back and re-verified to ensure client visit note records are processed correctly and completely during data migration.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125543</span>
-        </div>
-        <div class="card-title">✂️ Services Full Req Macro Reset</div>
-        <div class="card-blurb">The Services migration macro was rolled back and re-verified to ensure all service records are migrated accurately without data loss or corruption.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125544</span>
-        </div>
-        <div class="card-title">👥 Employees Full Req Macro Reset</div>
-        <div class="card-blurb">The Employees migration macro was rolled back and re-verified to ensure all employee records are migrated accurately and meet data requirements.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125545</span>
-        </div>
-        <div class="card-title">📅 Appointments Full Req Macro Reset</div>
-        <div class="card-blurb">The Appointments migration macro was rolled back and re-verified to ensure appointment records are handled correctly and completely during data migration.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <span class="badge badge-defect">🔧 Defect</span>
-          <span class="wi-id">#125546</span>
-        </div>
-        <div class="card-title">💰 Sales Snapshot Full Req Macro Reset</div>
-        <div class="card-blurb">The Sales Snapshot migration macro was rolled back and re-verified to ensure all sales data snapshots are processed accurately during migration.</div>
-        <div class="card-footer">
-          <span class="area-path">📁 Macros</span>
-          <span class="date-chip">🚀 Jul 9, 2026</span>
+          <span class="date-chip">🚀 Jul 21, 2026</span>
         </div>
       </div>
 
@@ -461,10 +370,10 @@
       <div class="card">
         <div class="card-top">
           <span class="badge badge-bug">🐛 Bug Fix</span>
-          <span class="wi-id">#133683</span>
+          <span class="wi-id">#134881</span>
         </div>
-        <div class="card-title">🗺️ DataMate, Square, Wrong Mapping in VisitNotes</div>
-        <div class="card-blurb">A fix is in progress to correct a data mapping error in DataMate's Square integration where visit note information was being incorrectly mapped during conversions.</div>
+        <div class="card-title">📦 DataMate, Booker Products, Missing Leading 0s</div>
+        <div class="card-blurb">A fix is in progress to correct an issue in DataMate's Booker integration where product codes that start with a zero were having those leading zeros stripped out during conversion, causing mismatches with the original data.</div>
         <div class="card-footer">
           <span class="area-path">📁 Data Transformation Tool</span>
           <span class="date-chip">✅ Ready for Merge</span>
