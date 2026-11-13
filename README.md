@@ -24,28 +24,19 @@ No one has to manually update the page. It stays current on its own.
 
 ## How does the page get updated?
 
-There are **three automatic systems** that refresh the page every weekday at 3:45 PM Eastern. GitHub Actions is the primary — it runs in the cloud and doesn't require anyone's computer to be on.
-
-### System 1 — GitHub Actions (primary, cloud-based)
-A workflow runs automatically in the cloud every weekday at 3:45 PM EST — even when Tori is out of office.
+**GitHub Actions is the only automatic system.** It runs in the cloud every weekday at 3:45 PM EST — even when Tori is out of office or her computer is off.
 - Workflow file: `.github/workflows/refresh.yml` in the GitHub repo
 - Script file: `refresh.ps1` in the GitHub repo (cloud version — reads ADO token from GitHub secret)
 - Anyone on the team can trigger a manual run from: **github.com/toriladen/ds-release-notes/actions**
 - Run history and logs are visible to the whole team on that same Actions page
 - Uses an ADO API token stored securely as a GitHub secret named `ADO_PAT`
 
-### System 2 — Windows Task Scheduler (local backup)
-A PowerShell script runs directly on Tori's computer every weekday at 3:45 PM.
-- Script file: `Refresh-ReleaseNotes.ps1` (in the CLAUDE folder)
-- Log file: `Refresh-ReleaseNotes.log` (same folder — check this if something looks wrong)
-- Requires Tori's computer to be on and connected to the internet
+### Previously there were two other systems — now disabled
+A Windows Task Scheduler job on Tori's computer and a Claude scheduled task used to run the same refresh at the same time of day as a "backup." In practice all three raced to push to the same branch at once, which caused rejected pushes and merge conflicts on several days in November 2026. Both backups were disabled on 2026-11-13 so GitHub Actions is the single source of truth:
+- **Windows Task Scheduler** — task `DS Release Notes Refresh` (path `\MSI\`), state set to Disabled. The script `Refresh-ReleaseNotes.ps1` and its log `Refresh-ReleaseNotes.log` (both in the CLAUDE folder) still exist but no longer run on a schedule.
+- **Claude scheduled task** — `ds-release-notes-refresh`, set to `enabled: false` in the Claude desktop app's Scheduled section. The task definition still exists and can be manually run or re-enabled if ever needed.
 
-### System 3 — Claude Scheduled Task (secondary backup)
-A Claude AI routine also runs every weekday at 3:45 PM.
-- Visible in the Claude desktop app under the "Scheduled" section in the sidebar
-- Requires the Claude desktop app to be open to run
-
-If GitHub Actions fails, the local script should catch it. All three do the same thing.
+If GitHub Actions itself needs a backup again, re-enable only one of these — never both at once — to avoid the same race.
 
 ---
 
@@ -60,19 +51,14 @@ If GitHub Actions fails, the local script should catch it. All three do the same
 
 ## What if the page looks outdated?
 
-**Step 1 — Check the log file**
-Open `Refresh-ReleaseNotes.log` in the CLAUDE folder. The last few lines will tell you whether the script ran successfully or hit an error.
+**Step 1 — Check the GitHub Actions run history**
+Go to **github.com/toriladen/ds-release-notes/actions** and look at the most recent run. It'll show whether the refresh succeeded or failed, with full logs.
 
 **Step 2 — Run it manually**
-Easiest option — trigger GitHub Actions from the browser (works for anyone on the team, no computer required):
+Trigger GitHub Actions from the browser (works for anyone on the team, no computer required):
 1. Go to **github.com/toriladen/ds-release-notes/actions**
 2. Click **"Refresh Release Notes"** in the left sidebar
 3. Click **"Run workflow"** → **"Run workflow"**
-
-Or run locally on Tori's computer via PowerShell:
-```
-powershell -File "C:\Users\ToriLaden\OneDrive - Millennium Systems International\!Data Services Stuff!\CLAUDE\Refresh-ReleaseNotes.ps1"
-```
 
 **Step 3 — If ADO auth fails**
 If the log shows an authorization error, the ADO API token may have expired (tokens are set for 1 year). To fix it:
@@ -89,8 +75,8 @@ If the log shows an authorization error, the ADO API token may have expired (tok
 | GitHub Actions workflow | `ds-release-notes\.github\workflows\refresh.yml` |
 | Cloud refresh script | `ds-release-notes\refresh.ps1` |
 | Actions run history | https://github.com/toriladen/ds-release-notes/actions |
-| Local script | `CLAUDE\Refresh-ReleaseNotes.ps1` |
-| Local run log | `CLAUDE\Refresh-ReleaseNotes.log` |
+| Local script (disabled) | `CLAUDE\Refresh-ReleaseNotes.ps1` |
+| Local run log (disabled) | `CLAUDE\Refresh-ReleaseNotes.log` |
 | HTML source copy | `CLAUDE\release-notes.html` |
 | GitHub repo folder | `CLAUDE\ds-release-notes\index.html` |
 | Live website | https://dsreleasenotes.netlify.app |
@@ -100,11 +86,11 @@ If the log shows an authorization error, the ADO API token may have expired (tok
 
 ## Who to contact if something breaks
 
-- **Page not updating** → Check the log file, or ask Claude to run it manually
+- **Page not updating** → Check the GitHub Actions run history, or ask Claude to run it manually
 - **ADO token expired** → Generate a new PAT at dev.azure.com (see Step 3 above)
 - **GitHub push failing** → The GitHub token may need to be refreshed — ask Claude for help
 - **Netlify down** → Check netlify.com status; this is rare and usually resolves on its own
 
 ---
 
-*Last updated: November 2026*
+*Last updated: 2026-11-13*
